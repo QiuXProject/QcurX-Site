@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polityka prywatności · QcurX</title>
+<meta name="theme-color" content="#0a0a12">
+<meta name="description" content="Polityka prywatności QcurX — co zapisujemy w przeglądarce, co dostajemy od Google, czego nie zbieramy.">
+<style>
+  :root{
+    --bg:#08080f; --panel:#0f0f1a; --line:rgba(255,255,255,.09);
+    --ink:#eef1ff; --muted:#9aa0bd; --accent:#f53642; --accent2:#f53642;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(900px 500px at 12% -12%,rgba(245,54,66,.16),transparent 62%),
+      radial-gradient(800px 520px at 92% 4%,rgba(138,54,245,.14),transparent 60%);
+  }
+  .wrap{width:min(820px,100% - 40px);margin:0 auto;position:relative;z-index:1}
+  header{padding:26px 0 6px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;letter-spacing:-.02em}
+  .brand i{
+    width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-style:normal;
+    background:linear-gradient(140deg,var(--accent),var(--accent2));color:#0a0a12;font-weight:900;font-size:14px;
+    box-shadow:0 0 22px rgba(245,54,66,.45);
+  }
+  .back{
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:#c9cde4;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:8px 14px;
+    transition:.18s;
+  }
+  .back:hover{border-color:rgba(245,54,66,.6);color:#fff}
+  main{padding:26px 0 70px}
+  .kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+  h1{font-size:clamp(28px,5vw,40px);line-height:1.12;letter-spacing:-.03em;margin:0 0 12px}
+  .lead{color:var(--muted);font-size:15.5px;margin:0 0 8px;max-width:64ch}
+  .updated{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:#6f7590;margin:0 0 30px}
+  .lang{display:flex;gap:8px;margin:0 0 26px}
+  .lang button{
+    font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;
+    background:rgba(255,255,255,.04);color:#b9bdd2;border:1px solid var(--line);border-radius:999px;padding:7px 15px;
+    transition:.18s;
+  }
+  .lang button.on{background:rgba(245,54,66,.16);border-color:rgba(245,54,66,.55);color:#fff}
+  section{
+    background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+    border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:0 0 16px;
+  }
+  h2{font-size:17px;letter-spacing:-.01em;margin:0 0 10px;display:flex;align-items:center;gap:9px}
+  h2 span{
+    font-family:var(--mono);font-size:11px;color:var(--accent);
+    border:1px solid rgba(245,54,66,.4);background:rgba(245,54,66,.10);
+    border-radius:8px;padding:2px 7px;flex-shrink:0;
+  }
+  p{margin:0 0 10px;color:#c7cbe0;font-size:14.5px}
+  p:last-child{margin-bottom:0}
+  ul{margin:0 0 10px;padding-left:20px;color:#c7cbe0;font-size:14.5px}
+  li{margin:0 0 6px}
+  li::marker{color:var(--accent)}
+  strong{color:#fff}
+  code{
+    font-family:var(--mono);font-size:12.5px;background:rgba(255,255,255,.07);
+    border:1px solid var(--line);border-radius:6px;padding:1px 5px;color:#e6e9ff;
+  }
+  a{color:#ff8891}
+  .note{
+    border-left:3px solid var(--accent);background:rgba(245,54,66,.08);border-radius:0 12px 12px 0;
+    padding:14px 16px;font-size:14px;color:#d8dcef;margin:0 0 16px;
+  }
+  footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#7d8299;font-size:12.5px}
+  footer a{color:#b9bdd2;text-decoration:none}
+  footer a:hover{color:#fff}
+  [data-lang-block]{display:none}
+  [data-lang-block].on{display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="index.html"><i>Q</i> QcurX</a>
+    <a class="back" href="index.html">← <span id="backLabel">Wróć do strony</span></a>
+  </header>
+
+  <main>
+    <p class="kicker" data-i18n-pl="Dokumenty" data-i18n-en="Documents">Dokumenty</p>
+    <h1 data-i18n-pl="Polityka prywatności" data-i18n-en="Privacy policy">Polityka prywatności</h1>
+    <p class="lead"
+       data-i18n-pl="Krótko: QcurX nie ma serwera, nie zbiera danych i nie wysyła ich nigdzie. Wszystko, co dotyczy Twojego konta, zostaje w Twojej przeglądarce."
+       data-i18n-en="Short version: QcurX has no server, collects no data and sends it nowhere. Everything about your account stays in your browser.">
+      Krótko: QcurX nie ma serwera, nie zbiera danych i nie wysyła ich nigdzie.
+    </p>
+    <p class="updated" data-i18n-pl="Ostatnia aktualizacja: 25 października 2026" data-i18n-en="Last updated: 25 October 2026">Ostatnia aktualizacja: 25 października 2026</p>
+
+    <div class="lang">
+      <button type="button" data-setlang="pl" class="on">Polski</button>
+      <button type="button" data-setlang="en">English</button>
+    </div>
+
+    <!-- ============ PL ============ -->
+    <div data-lang-block="pl" class="on">
+      <section>
+        <h2><span>1</span> Kto prowadzi stronę</h2>
+        <p>Strona QcurX (<strong>qiuxproject.github.io/QcurX-Site</strong>) jest projektem
+        <strong>QiuX Project</strong>. Kontakt: profil
+        <a href="https://github.com/qiuxproject" target="_blank" rel="noopener">github.com/qiuxproject</a>.</p>
+        <p>Strona jest statyczna — to pliki HTML, CSS i JavaScript. <strong>Nie mamy bazy danych
+        ani serwera, który przechowuje dane użytkowników.</strong></p>
+      </section>
+
+      <section>
+        <h2><span>2</span> Co zapisujemy w Twojej przeglądarce</h2>
+        <p>Korzystamy z <code>localStorage</code> — pamięci przeglądarki, która zostaje na Twoim
+        urządzeniu i nie jest nigdzie wysyłana:</p>
+        <ul>
+          <li><strong>konto</strong> — adres e-mail, nazwa i (przy logowaniu hasłem) skrót SHA-256 hasła, nigdy samo hasło,</li>
+          <li><strong>sesja</strong> — informacja, że jesteś zalogowany,</li>
+          <li><strong>Twoje paczki</strong> — kursory dodane przez Ciebie na tej stronie,</li>
+          <li><strong>ustawienia</strong> — wybrany język (PL/EN) i ostatnio wpisany e-mail.</li>
+        </ul>
+        <p>Możesz to usunąć w każdej chwili: wyczyść dane witryny w ustawieniach przeglądarki
+        (lub tryb prywatny) — konto i dodatki znikną.</p>
+      </section>
+
+      <section>
+        <h2><span>3</span> Logowanie przez Google</h2>
+        <p>Jeśli wybierzesz „Zaloguj się przez Google", logowanie odbywa się
+        <strong>bezpośrednio w oknie Google</strong>. Twoje hasło do Google nigdy nie trafia do nas.</p>
+        <p>Google przekazuje nam tylko podstawowe dane z Twojego profilu:</p>
+        <ul>
+          <li>adres e-mail,</li>
+          <li>imię i nazwę wyświetlaną,</li>
+          <li>adres zdjęcia profilowego (jeśli je masz).</li>
+        </ul>
+        <p>Nie prosimy o dostęp do Gmaila, Dysku, kontaktów ani żadnych innych danych.
+        Zakres to wyłącznie <code>openid</code>, <code>email</code> i <code>profile</code>.
+        Otrzymane dane zapisujemy <strong>tylko w Twojej przeglądarce</strong>.</p>
+        <p>Zasady Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
+        Możesz też odłączyć aplikację w
+        <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">ustawieniach konta Google</a>.</p>
+      </section>
+
+      <section>
+        <h2><span>4</span> Logowanie adresem e-mail</h2>
+        <p>Możesz też „zalogować się" samym adresem e-mail — bez hasła. To wygodne konto
+        lokalne: adres jest zapisywany wyłącznie w Twojej przeglądarce i służy do tego,
+        żeby Twoje dodatki były widoczne po odświeżeniu strony. Nie wysyłamy na ten adres
+        żadnych wiadomości i nie weryfikujemy go.</p>
+        <p class="note">Uwaga: konto lokalne nie jest zabezpieczone hasłem w naszym systemie —
+        ponieważ nie ma serwera, nikt nie może go przejąć zdalnie, ale każdy, kto użyje Twojej
+        przeglądarki, zobaczy Twoje dodatki.</p>
+      </section>
+
+      <section>
+        <h2><span>5</span> Czego nie robimy</h2>
+        <ul>
+          <li>nie zbieramy statystyk, nie używamy analityki ani pikseli śledzących,</li>
+          <li>nie wyświetlamy reklam,</li>
+          <li>nie zakładamy plików cookie do śledzenia,</li>
+          <li>nie sprzedajemy i nie udostępniamy żadnych danych,</li>
+          <li>nie wysyłamy e-maili marketingowych.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span>6</span> Pobieranie paczek</h2>
+        <p>Paczki kursorów pobierasz jako pliki <code>.zip</code> / <code>.rar</code> bezpośrednio
+        z linków podanych przez autora (np. Google Drive). Pobieranie
+        <strong>nie wymaga logowania</strong>. Po kliknięciu linku obowiązują zasady
+        serwisu, w którym plik jest przechowywany.</p>
+      </section>
+
+      <section>
+        <h2><span>7</span> Hosting</h2>
+        <p>Strona jest hostowana na <strong>GitHub Pages</strong>. Dostawca może zapisywać
+        techniczne logi (adres IP, typ przeglądarki) w celach bezpieczeństwa i statystyk
+        własnych — zgodnie z
+        <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">polityką prywatności GitHuba</a>.
+        Nie mamy dostępu do tych logów w formie pozwalającej Cię zidentyfikować.</p>
+      </section>
+
+      <section>
+        <h2><span>8</span> Twoje prawa</h2>
+        <p>Dane, które przechowujemy, są wyłącznie w Twojej przeglądarce, więc masz nad nimi
+        pełną kontrolę: możesz je podejrzeć w narzędziach deweloperskich (Application →
+        Local Storage) i usunąć jednym kliknięciem. Jeśli chcesz usunąć konto Google
+        powiązane z tą stroną — zrób to w
+        <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">uprawnieniach konta Google</a>.
+        W sprawach dotyczących danych napisz przez profil
+        <a href="https://github.com/qiuxproject" target="_blank" rel="noopener">github.com/qiuxproject</a>.</p>
+      </section>
+
+      <section>
+        <h2><span>9</span> Zmiany</h2>
+        <p>Jeśli polityka się zmieni, zaktualizujemy tę stronę i datę na górze. Korzystanie
+        ze strony po zmianie oznacza akceptację nowej wersji.</p>
+      </section>
+    </div>
+
+    <!-- ============ EN ============ -->
+    <div data-lang-block="en">
+      <section>
+        <h2><span>1</span> Who runs this site</h2>
+        <p>QcurX (<strong>qiuxproject.github.io/QcurX-Site</strong>) is a project by
+        <strong>QiuX Project</strong>. Contact:
+        <a href="https://github.com/qiuxproject" target="_blank" rel="noopener">github.com/qiuxproject</a>.</p>
+        <p>The site is static — HTML, CSS and JavaScript files. <strong>There is no database
+        and no server storing user data.</strong></p>
+      </section>
+
+      <section>
+        <h2><span>2</span> What we store in your browser</h2>
+        <p>We use <code>localStorage</code> — browser memory that stays on your device and is
+        never sent anywhere:</p>
+        <ul>
+          <li><strong>account</strong> — e-mail address, name and (for password sign-in) a SHA-256 hash of the password, never the password itself,</li>
+          <li><strong>session</strong> — the fact that you are signed in,</li>
+          <li><strong>your packs</strong> — cursors you added on this site,</li>
+          <li><strong>settings</strong> — chosen language (PL/EN) and last used e-mail.</li>
+        </ul>
+        <p>You can clear this at any time: clear site data in your browser settings
+        (or use private mode) and the account and additions disappear.</p>
+      </section>
+
+      <section>
+        <h2><span>3</span> Signing in with Google</h2>
+        <p>If you choose “Sign in with Google", the sign-in happens
+        <strong>directly in Google's window</strong>. Your Google password never reaches us.</p>
+        <p>Google shares only basic profile data with us:</p>
+        <ul>
+          <li>e-mail address,</li>
+          <li>first and display name,</li>
+          <li>profile picture URL (if you have one).</li>
+        </ul>
+        <p>We do not request access to Gmail, Drive, contacts or any other data. The scope is
+        limited to <code>openid</code>, <code>email</code> and <code>profile</code>.
+        The data we receive is stored <strong>only in your browser</strong>.</p>
+        <p>Google policies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
+        You can also disconnect the app in your
+        <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google account settings</a>.</p>
+      </section>
+
+      <section>
+        <h2><span>4</span> Signing in with e-mail</h2>
+        <p>You can also “sign in" with just an e-mail address — no password. This is a
+        local account: the address is stored only in your browser and is used to keep your
+        additions visible after a page refresh. We never send any messages to that address
+        and never verify it.</p>
+        <p class="note">Note: a local account is not protected by a password in our system —
+        because there is no server, nobody can take it over remotely, but anyone using your
+        browser will see your additions.</p>
+      </section>
+
+      <section>
+        <h2><span>5</span> What we never do</h2>
+        <ul>
+          <li>no analytics, no tracking pixels,</li>
+          <li>no advertising,</li>
+          <li>no tracking cookies,</li>
+          <li>no selling or sharing of any data,</li>
+          <li>no marketing e-mails.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span>6</span> Downloading packs</h2>
+        <p>Cursor packs download as <code>.zip</code> / <code>.rar</code> files directly from
+        links provided by the author (e.g. Google Drive). Downloading
+        <strong>does not require signing in</strong>. Once you open a link, the rules of the
+        service hosting that file apply.</p>
+      </section>
+
+      <section>
+        <h2><span>7</span> Hosting</h2>
+        <p>The site is hosted on <strong>GitHub Pages</strong>. The provider may keep technical
+        logs (IP address, browser type) for security and its own statistics, in line with the
+        <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub privacy statement</a>.
+        We have no access to those logs in a form that could identify you.</p>
+      </section>
+
+      <section>
+        <h2><span>8</span> Your rights</h2>
+        <p>The data we hold lives only in your browser, so you have full control: you can
+        inspect it in developer tools (Application → Local Storage) and delete it in one click.
+        To remove the Google account linked to this site, do it in your
+        <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google account permissions</a>.
+        For data-related matters, contact us via
+        <a href="https://github.com/qiuxproject" target="_blank" rel="noopener">github.com/qiuxproject</a>.</p>
+      </section>
+
+      <section>
+        <h2><span>9</span> Changes</h2>
+        <p>If this policy changes, we will update this page and the date above. Continuing to
+        use the site after a change means you accept the new version.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div>© <span id="year">2026</span> QcurX · <a href="index.html">index.html</a></div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var lang = "pl";
+  try { lang = localStorage.getItem("qcurx-lang") || "pl"; } catch (e) {}
+  function apply(l) {
+    lang = l === "en" ? "en" : "pl";
+    document.documentElement.lang = lang;
+    document.title = (lang === "en" ? "Privacy policy" : "Polityka prywatności") + " · QcurX";
+    document.getElementById("backLabel").textContent = lang === "en" ? "Back to site" : "Wróć do strony";
+    Array.prototype.forEach.call(document.querySelectorAll("[data-setlang]"), function (b) {
+      b.classList.toggle("on", b.getAttribute("data-setlang") === lang);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-lang-block]"), function (d) {
+      d.classList.toggle("on", d.getAttribute("data-lang-block") === lang);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-i18n-" + lang + "]"), function (el) {
+      el.textContent = el.getAttribute("data-i18n-" + lang);
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll("[data-setlang]"), function (b) {
+    b.addEventListener("click", function () { apply(b.getAttribute("data-setlang")); });
+  });
+  document.getElementById("year").textContent = new Date().getFullYear();
+  apply(lang);
+})();
+</script>
+</body>
+</html>

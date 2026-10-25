@@ -48,9 +48,27 @@ które pokaże panel. Po podłączeniu domeny dodaj ją też do Google Cloud
 ## Po publikacji — logowanie
 
 - **Adres e-mail** (bez hasła) i **e-mail + hasło** działają od razu, bez konfiguracji.
-- **Google** wymaga Client ID — patrz sekcja „Prawdziwe logowanie Google” w `README.md`.
-  W polu *Authorized JavaScript origins* dodaj **adres produkcyjny** strony
-  (np. `https://qcurx-abc123.netlify.app`), nie tylko `localhost`.
+- **Pobieranie paczek nie wymaga logowania.** Logowanie potrzebne jest tylko do
+  dodawania własnych paczek i do Ustawień (kody do archiwów `.rar`).
+- **Google**: żeby przycisk „Zaloguj przez Google” otwierał normalne okno wyboru
+  konta, wystarczy **jednorazowo** wpisać Client ID w `tools/config.json`
+  i przebudować stronę:
+
+  ```json
+  { "googleClientId": "1234567890-abc.apps.googleusercontent.com" }
+  ```
+
+  ```bash
+  python3 tools/build.py
+  ```
+
+  Potem wgrywasz `qcurx-site.zip` na hosting. **Odwiedzający nigdy nie widzą
+  żadnych kluczy** — klikają zwykły przycisk Google i wybierają konto.
+  Dopóki Client ID jest pusty, zakładka Google jest po prostu ukryta
+  (zostaje logowanie e-mailem) — nikt nie jest proszony o klucze.
+
+  W Google Cloud → *Authorized JavaScript origins* dodaj **adres produkcyjny**
+  strony (np. `https://qcurx-abc123.netlify.app`), nie tylko `localhost`.
 
 ## O czym pamiętać
 
