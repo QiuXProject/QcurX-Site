@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regulamin · QcurX</title>
+<meta name="theme-color" content="#0a0a12">
+<meta name="description" content="Regulamin korzystania z QcurX — zasady pobierania paczek kursorów, licencja i odpowiedzialność.">
+<style>
+  :root{
+    --bg:#08080f; --panel:#0f0f1a; --line:rgba(255,255,255,.09);
+    --ink:#eef1ff; --muted:#9aa0bd; --accent:#f53642;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(900px 500px at 12% -12%,rgba(245,54,66,.16),transparent 62%),
+      radial-gradient(800px 520px at 92% 4%,rgba(138,54,245,.14),transparent 60%);
+  }
+  .wrap{width:min(820px,100% - 40px);margin:0 auto;position:relative;z-index:1}
+  header{padding:26px 0 6px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;letter-spacing:-.02em}
+  .brand i{
+    width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-style:normal;
+    background:linear-gradient(140deg,#f53642,#8a36f5);color:#0a0a12;font-weight:900;font-size:14px;
+    box-shadow:0 0 22px rgba(245,54,66,.45);
+  }
+  .back{
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:#c9cde4;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:8px 14px;transition:.18s;
+  }
+  .back:hover{border-color:rgba(245,54,66,.6);color:#fff}
+  main{padding:26px 0 70px}
+  .kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+  h1{font-size:clamp(28px,5vw,40px);line-height:1.12;letter-spacing:-.03em;margin:0 0 12px}
+  .lead{color:var(--muted);font-size:15.5px;margin:0 0 8px;max-width:64ch}
+  .updated{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:#6f7590;margin:0 0 30px}
+  .lang{display:flex;gap:8px;margin:0 0 26px}
+  .lang button{
+    font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;
+    background:rgba(255,255,255,.04);color:#b9bdd2;border:1px solid var(--line);border-radius:999px;padding:7px 15px;transition:.18s;
+  }
+  .lang button.on{background:rgba(245,54,66,.16);border-color:rgba(245,54,66,.55);color:#fff}
+  section{
+    background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+    border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:0 0 16px;
+  }
+  h2{font-size:17px;letter-spacing:-.01em;margin:0 0 10px;display:flex;align-items:center;gap:9px}
+  h2 span{
+    font-family:var(--mono);font-size:11px;color:var(--accent);
+    border:1px solid rgba(245,54,66,.4);background:rgba(245,54,66,.10);border-radius:8px;padding:2px 7px;flex-shrink:0;
+  }
+  p{margin:0 0 10px;color:#c7cbe0;font-size:14.5px}
+  p:last-child{margin-bottom:0}
+  ul{margin:0 0 10px;padding-left:20px;color:#c7cbe0;font-size:14.5px}
+  li{margin:0 0 6px}
+  li::marker{color:var(--accent)}
+  strong{color:#fff}
+  code{font-family:var(--mono);font-size:12.5px;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:6px;padding:1px 5px;color:#e6e9ff}
+  a{color:#ff8891}
+  .note{border-left:3px solid var(--accent);background:rgba(245,54,66,.08);border-radius:0 12px 12px 0;padding:14px 16px;font-size:14px;color:#d8dcef;margin:0 0 16px}
+  footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#7d8299;font-size:12.5px}
+  footer a{color:#b9bdd2;text-decoration:none}
+  footer a:hover{color:#fff}
+  [data-lang-block]{display:none}
+  [data-lang-block].on{display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="index.html"><i>Q</i> QcurX</a>
+    <a class="back" href="index.html">← <span id="backLabel">Wróć do strony</span></a>
+  </header>
+
+  <main>
+    <p class="kicker" data-i18n-pl="Dokumenty" data-i18n-en="Documents">Dokumenty</p>
+    <h1 data-i18n-pl="Regulamin" data-i18n-en="Terms of use">Regulamin</h1>
+    <p class="lead"
+       data-i18n-pl="Zasady korzystania ze strony QcurX i pobierania paczek kursorów. Krótko i po ludzku — bez prawniczej waty."
+       data-i18n-en="Rules for using QcurX and downloading the cursor packs. Short and plain — no legalese padding.">
+      Zasady korzystania ze strony QcurX i pobierania paczek kursorów.
+    </p>
+    <p class="updated" data-i18n-pl="Ostatnia aktualizacja: 25 października 2026" data-i18n-en="Last updated: 25 October 2026">Ostatnia aktualizacja: 25 października 2026</p>
+
+    <div class="lang">
+      <button type="button" data-setlang="pl" class="on">Polski</button>
+      <button type="button" data-setlang="en">English</button>
+    </div>
+
+    <!-- ============ PL ============ -->
+    <div data-lang-block="pl" class="on">
+      <section>
+        <h2><span>1</span> Czym jest ta strona</h2>
+        <p>QcurX (<strong>qiuxproject.github.io/QcurX-Site</strong>) to galeria paczek kursorów
+        prowadzona przez <strong>QiuX Project</strong>. Strona służy do przeglądania i pobierania
+        paczek — nie podmienia kursora w Twoim systemie i nie instaluje niczego sama.</p>
+        <p>Korzystając ze strony, akceptujesz ten regulamin. Jeśli się nie zgadzasz — po prostu
+        z niej nie korzystaj.</p>
+      </section>
+
+      <section>
+        <h2><span>2</span> Pobieranie paczek</h2>
+        <ul>
+          <li>pobieranie jest <strong>darmowe</strong> i <strong>nie wymaga konta</strong>,</li>
+          <li>pliki leżą na zewnętrznych serwerach (np. Google Drive) — obowiązują tamtejsze zasady,</li>
+          <li>paczki oznaczone jako „Wkrótce" nie mają jeszcze linku i nie da się ich pobrać,</li>
+          <li>część archiwów <code>.rar</code> jest zabezpieczona hasłem — kod znajdziesz w
+              <strong>Ustawieniach</strong> po zalogowaniu na tej stronie.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span>3</span> Licencja — co możesz, a czego nie</h2>
+        <p><strong>Możesz:</strong></p>
+        <ul>
+          <li>używać kursorów na swoich komputerach — prywatnie, w pracy i w szkole,</li>
+          <li>pokazywać je na streamie, nagraniach i zrzutach ekranu,</li>
+          <li>wysyłać link do tej strony znajomym.</li>
+        </ul>
+        <p><strong>Nie możesz:</strong></p>
+        <ul>
+          <li>sprzedawać paczek ani ich części,</li>
+          <li>wrzucać plików na serwery z płatnymi pobraniami lub za reklamy,</li>
+          <li>przedstawiać ich jako własne dzieło.</li>
+        </ul>
+        <p>Licencja to <strong>użycie osobiste</strong> (personal use). Chcesz wykorzystać paczkę
+        komercyjnie (np. w grze lub produkcie)? Napisz przez
+        <a href="https://github.com/qiuxproject" target="_blank" rel="noopener">github.com/qiuxproject</a> — zwykle da się dogadać.</p>
+      </section>
+
+      <section>
+        <h2><span>4</span> Instalacja — na Twoją odpowiedzialność</h2>
+        <p>Instrukcja instalacji jest w każdej paczce (<code>INSTALL.txt</code>). Kursorów używasz
+        na własną odpowiedzialność: nie odpowiadamy za to, jak Twój system lub gra obsługują
+        pliki <code>.cur</code> i <code>.ani</code>, ani za utracone ustawienia.</p>
+        <p class="note">Zawsze rób kopię zapasową schematu kursora przed zmianą — w Windows:
+        Panel sterowania → Mysz → Wskaźniki → Zapisz jako.</p>
+      </section>
+
+      <section>
+        <h2><span>5</span> Twoje konto i dodane paczki</h2>
+        <ul>
+          <li>konto zakładasz adresem e-mail lub przez Google,</li>
+          <li>Twoje konto i dodane paczki są zapisywane <strong>w Twojej przeglądarce</strong>
+              (szczegóły w <a href="prywatnosc.html">polityce prywatności</a>),</li>
+          <li>dodając własną paczkę, oświadczasz, że masz do niej prawa,</li>
+          <li>nie wrzucaj treści nielegalnych, obraźliwych ani cudzych bez zgody autora.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span>6</span> Dostępność strony</h2>
+        <p>Strona jest darmowa i rozwijana po godzinach. Nie gwarantujemy nieprzerwanego działania
+        ani tego, że każda paczka zostanie na zawsze — linki do zewnętrznych serwerów mogą
+        przestać działać. Zgłoszenia błędów są mile widziane.</p>
+      </section>
+
+      <section>
+        <h2><span>7</span> Znaki i własność</h2>
+        <p>Nazwy „QcurX", „QiuX Project" oraz nazwy serii paczek należą do ich autora.
+        Prawa do okładek, opisów i plików kursorów pozostają przy QiuX Project.
+        Google, Windows, macOS i Linux są znakami towarowymi ich właścicieli — wymieniamy je
+        tylko informacyjnie.</p>
+      </section>
+
+      <section>
+        <h2><span>8</span> Reklamacje i kontakt</h2>
+        <p>Coś nie działa, kursor źle się zachowuje w grze, chcesz zgłosić naruszenie praw?
+        Napisz przez <a href="https://github.com/qiuxproject" target="_blank" rel="noopener">github.com/qiuxproject</a> —
+        podaj paczkę i system, a postaramy się poprawić.</p>
+      </section>
+
+      <section>
+        <h2><span>9</span> Zmiany regulaminu</h2>
+        <p>Regulamin może się zmienić wraz z rozwojem strony. Aktualna wersja zawsze jest na tej
+        stronie, z datą u góry. Dalsze korzystanie ze strony oznacza akceptację nowej wersji.</p>
+      </section>
+    </div>
+
+    <!-- ============ EN ============ -->
+    <div data-lang-block="en">
+      <section>
+        <h2><span>1</span> What this site is</h2>
+        <p>QcurX (<strong>qiuxproject.github.io/QcurX-Site</strong>) is a cursor pack gallery run by
+        <strong>QiuX Project</strong>. The site lets you browse and download packs — it does not
+        change your system cursor and does not install anything by itself.</p>
+        <p>By using the site you accept these terms. If you don't agree, simply don't use it.</p>
+      </section>
+
+      <section>
+        <h2><span>2</span> Downloads</h2>
+        <ul>
+          <li>downloads are <strong>free</strong> and <strong>require no account</strong>,</li>
+          <li>files are hosted on external services (e.g. Google Drive) — their rules apply,</li>
+          <li>packs marked “Coming soon" have no download link yet,</li>
+          <li>some <code>.rar</code> archives are password-protected — the code is in
+              <strong>Settings</strong> after signing in on this site.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span>3</span> Licence — what you may and may not do</h2>
+        <p><strong>You may:</strong></p>
+        <ul>
+          <li>use the cursors on your own computers — privately, at work and at school,</li>
+          <li>show them on streams, recordings and screenshots,</li>
+          <li>share a link to this site with friends.</li>
+        </ul>
+        <p><strong>You may not:</strong></p>
+        <ul>
+          <li>sell the packs or any part of them,</li>
+          <li>re-upload the files to paid-download or ad-supported hosts,</li>
+          <li>claim them as your own work.</li>
+        </ul>
+        <p>The licence is <strong>personal use</strong>. Want to use a pack commercially (e.g. in a
+        game or product)? Write via
+        <a href="https://github.com/qiuxproject" target="_blank" rel="noopener">github.com/qiuxproject</a> — we can usually work something out.</p>
+      </section>
+
+      <section>
+        <h2><span>4</span> Installation — at your own risk</h2>
+        <p>Each pack includes an installation guide (<code>INSTALL.txt</code>). You use the cursors at
+        your own risk: we are not responsible for how your system or game handles
+        <code>.cur</code> and <code>.ani</code> files, nor for lost settings.</p>
+        <p class="note">Always back up your cursor scheme before changing it — in Windows:
+        Control Panel → Mouse → Pointers → Save as.</p>
+      </section>
+
+      <section>
+        <h2><span>5</span> Your account and added packs</h2>
+        <ul>
+          <li>you sign in with an e-mail address or with Google,</li>
+          <li>your account and added packs are stored <strong>in your browser</strong>
+              (details in the <a href="prywatnosc.html">privacy policy</a>),</li>
+          <li>by adding a pack you confirm you hold the rights to it,</li>
+          <li>do not upload anything illegal, offensive or someone else's work without permission.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span>6</span> Availability</h2>
+        <p>The site is free and built after hours. We don't guarantee uninterrupted operation or that
+        every pack stays forever — external links can stop working. Bug reports are welcome.</p>
+      </section>
+
+      <section>
+        <h2><span>7</span> Trademarks and ownership</h2>
+        <p>“QcurX", “QiuX Project" and the pack series names belong to their author. Rights to the
+        covers, descriptions and cursor files remain with QiuX Project. Google, Windows, macOS and
+        Linux are trademarks of their respective owners — mentioned for information only.</p>
+      </section>
+
+      <section>
+        <h2><span>8</span> Complaints and contact</h2>
+        <p>Something broken, a cursor misbehaving in a game, or a rights issue? Write via
+        <a href="https://github.com/qiuxproject" target="_blank" rel="noopener">github.com/qiuxproject</a> —
+        include the pack and your OS, and we'll try to fix it.</p>
+      </section>
+
+      <section>
+        <h2><span>9</span> Changes to these terms</h2>
+        <p>These terms may change as the site grows. The current version is always on this page, with
+        the date at the top. Continued use of the site means you accept the new version.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div>© <span id="year">2026</span> QcurX · <a href="index.html">index.html</a> · <a href="prywatnosc.html" data-i18n-pl="Polityka prywatności" data-i18n-en="Privacy policy">Polityka prywatności</a></div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var lang = "pl";
+  try { lang = localStorage.getItem("qcurx-lang") || "pl"; } catch (e) {}
+  function apply(l) {
+    lang = l === "en" ? "en" : "pl";
+    document.documentElement.lang = lang;
+    document.title = (lang === "en" ? "Terms of use" : "Regulamin") + " · QcurX";
+    document.getElementById("backLabel").textContent = lang === "en" ? "Back to site" : "Wróć do strony";
+    Array.prototype.forEach.call(document.querySelectorAll("[data-setlang]"), function (b) {
+      b.classList.toggle("on", b.getAttribute("data-setlang") === lang);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-lang-block]"), function (d) {
+      d.classList.toggle("on", d.getAttribute("data-lang-block") === lang);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-i18n-" + lang + "]"), function (el) {
+      el.textContent = el.getAttribute("data-i18n-" + lang);
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll("[data-setlang]"), function (b) {
+    b.addEventListener("click", function () { apply(b.getAttribute("data-setlang")); });
+  });
+  document.getElementById("year").textContent = new Date().getFullYear();
+  apply(lang);
+})();
+</script>
+</body>
+</html>
